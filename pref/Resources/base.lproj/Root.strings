@@ -7,8 +7,8 @@
   "MAIN_PREFERENCES" = "Main Preferences";
   "ENABLE" = "Enable";
   "DELAY" = "Delay (minimum: 1.0)";
-  "DIM_ICONS_AND_LABELS" = "Dim Icons and Labels";
-  "HIDE_LABELS" = "Hide Labels";
+  "ICONS" = "Icons";
+  "LABELS" = "Labels";
   "OTHER_PREFERENCES" = "Other Preferences";
   "RESET_SETTINGS" = "Reset Settings";
   "SUPPORT_ME" = "Support Me";

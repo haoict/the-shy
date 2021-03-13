@@ -77,6 +77,12 @@
 
       <dict>
         <key>cell</key>
+        <string>PSGroupCell</string>
+        <key>label</key>
+        <string>ICONS</string>
+      </dict>
+      <dict>
+        <key>cell</key>
         <string>PSSwitchCell</string>
         <key>cellClass</key>
         <string>HPSSwitchCell</string>
@@ -87,11 +93,37 @@
         <key>key</key>
         <string>dimIconsAndLabels</string>
         <key>label</key>
-        <string>DIM_ICONS_AND_LABELS</string>
+        <string>ENABLE</string>
+        <key>PostNotification</key>
+        <string>com.haoict.theshypref/PrefChanged</string>
+      </dict>
+      <dict>
+        <key>cell</key>
+        <string>PSSliderCell</string>
+        <key>cellClass</key>
+        <string>HPSSliderCell</string>
+        <key>default</key>
+        <integer>50</integer>
+        <key>defaults</key>
+        <string>com.haoict.theshypref</string>
+        <key>key</key>
+        <string>iconOpacity</string>
+        <key>min</key>
+        <integer>0</integer>
+        <key>max</key>
+        <integer>100</integer>
+        <key>showValue</key>
+        <true/>
         <key>PostNotification</key>
         <string>com.haoict.theshypref/PrefChanged</string>
       </dict>
 
+      <dict>
+        <key>cell</key>
+        <string>PSGroupCell</string>
+        <key>label</key>
+        <string>LABELS</string>
+      </dict>
       <dict>
         <key>cell</key>
         <string>PSSwitchCell</string>
@@ -104,9 +136,38 @@
         <key>key</key>
         <string>hideLabels</string>
         <key>label</key>
-        <string>HIDE_LABELS</string>
+        <string>ENABLE</string>
         <key>PostNotification</key>
         <string>com.haoict.theshypref/PrefChanged</string>
+      </dict>
+      <dict>
+        <key>cell</key>
+        <string>PSSliderCell</string>
+        <key>cellClass</key>
+        <string>HPSSliderCell</string>
+        <key>default</key>
+        <integer>0</integer>
+        <key>defaults</key>
+        <string>com.haoict.theshypref</string>
+        <key>key</key>
+        <string>labelOpacity</string>
+        <key>min</key>
+        <integer>0</integer>
+        <key>max</key>
+        <integer>100</integer>
+        <key>showValue</key>
+        <true/>
+        <key>PostNotification</key>
+        <string>com.haoict.theshypref/PrefChanged</string>
+      </dict>
+
+      <dict>
+        <key>cell</key>
+        <string>PSGroupCell</string>
+        <key>footerText</key>
+        <string>Since labels is subview of icons, this value can't be greater than icons opacity value. Even if you try to set it greater, it will be equal to icons opacity value. Eg: icons = 20, labels = 80 -> labels will be 20</string>
+        <key>isStaticText</key>
+        <true/>
       </dict>
 
       <!-- Other Settings -->

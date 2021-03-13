@@ -5,6 +5,8 @@ static BOOL enable;
 static double delay;
 static BOOL dimIconsAndLabels;
 static BOOL hideLabels;
+static double iconOpacity;
+static double labelOpacity;
 
 static void reloadPrefs() {
   NSDictionary *settings = [[NSMutableDictionary alloc] initWithContentsOfFile:@PLIST_PATH] ?: [@{} mutableCopy];
@@ -16,15 +18,18 @@ static void reloadPrefs() {
   }
   dimIconsAndLabels = [[settings objectForKey:@"dimIconsAndLabels"] ?: @(YES) boolValue];
   hideLabels = [[settings objectForKey:@"hideLabels"] ?: @(YES) boolValue];
+
+  iconOpacity = ([settings objectForKey:@"iconOpacity"] == nil ? 50.0 : [[settings objectForKey:@"iconOpacity"] doubleValue]) / 100.0;
+  labelOpacity = ([[settings objectForKey:@"labelOpacity"] doubleValue] ?: 0.0f) / 100.0;
 }
 
-static void animateIconListViewLabelsAlpha(SBIconListView *listView, double alpha) {
+static void animateIconListViewLabelsAlpha(SBIconListView *listView, double iconAlpha, double labelAlpha) {
   [UIView animateWithDuration:0.5 animations:^{
-    if (hideLabels) {
-      [listView setIconsLabelAlpha:alpha];
-    }
     if (dimIconsAndLabels) {
-      [listView setAlphaForAllIcons:alpha == 0.0f ? 0.5f : 1.0f];
+      [listView setAlphaForAllIcons:iconAlpha];
+    }
+    if (hideLabels) {
+      [listView setIconsLabelAlpha:labelAlpha];
     }
   }];
 }
@@ -80,12 +85,12 @@ static void prepareHideIconsLabels(id self) {
 
     %new
     - (void)_hideIconsLabels {
-      animateIconListViewLabelsAlpha(self.currentIconListView, 0.0f);
+      animateIconListViewLabelsAlpha(self.currentIconListView, iconOpacity, labelOpacity);
     }
 
     %new
     - (void)_showIconsLabels {
-      animateIconListViewLabelsAlpha(self.currentIconListView, 1.0f);
+      animateIconListViewLabelsAlpha(self.currentIconListView, 1.0f, 1.0f);
     }
   %end
 
@@ -139,7 +144,7 @@ static void prepareHideIconsLabels(id self) {
       %orig;
 
       if ([self respondsToSelector: @selector(dockListView)]) {
-        animateIconListViewLabelsAlpha(self.dockListView, 1.0f);
+        animateIconListViewLabelsAlpha(self.dockListView, 1.0f, 1.0f);
       }
       prepareHideIconsLabels(self);
     }
@@ -152,17 +157,17 @@ static void prepareHideIconsLabels(id self) {
 
     %new
     - (void)_hideIconsLabels {
-      animateIconListViewLabelsAlpha(self.currentIconListView, 0.0f);
+      animateIconListViewLabelsAlpha(self.currentIconListView, iconOpacity, labelOpacity);
       if ([self respondsToSelector: @selector(dockListView)]) {
-        animateIconListViewLabelsAlpha(self.dockListView, 0.0f);
+        animateIconListViewLabelsAlpha(self.dockListView, iconOpacity, labelOpacity);
       }
     }
 
     %new
     - (void)_showIconsLabels {
-      animateIconListViewLabelsAlpha(self.currentIconListView, 1.0f);
+      animateIconListViewLabelsAlpha(self.currentIconListView, 1.0f, 1.0f);
       if ([self respondsToSelector: @selector(dockListView)]) {
-        animateIconListViewLabelsAlpha(self.dockListView, 1.0f);
+        animateIconListViewLabelsAlpha(self.dockListView, 1.0f, 1.0f);
       }
     }
   %end

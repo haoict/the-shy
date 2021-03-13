@@ -1,7 +1,7 @@
 Package: com.haoict.theshy
 Name: The shy
 Depends: mobilesubstrate, preferenceloader, com.haoict.libhdev (>= 4.8.0), firmware (>= 14)
-Version: 1.0.0
+Version: 1.1.0
 Architecture: iphoneos-arm
 Description: Dim icons or labels after inactivity
  Dim icons or labels after inactivity
@@ -10,8 +10,7 @@ Description: Dim icons or labels after inactivity
  Features:
  - Dim icons or labels after inactivity
  - Custom delay time
- - Custom: Dim icon only or hide lable only or both
- - Support iOS 14
+ - Custom icons or labels opacity
  . 
  I work very hard to make good, free and open source tweaks for everyone
  If you want to support, you can buy me a coffee at https://www.paypal.me/haoict

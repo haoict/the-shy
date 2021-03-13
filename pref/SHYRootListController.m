@@ -1,7 +1,7 @@
 #include "SHYRootListController.h"
 
 #define TWEAK_TITLE "The shy"
-#define TINT_COLOR "#d0a324"
+#define TINT_COLOR "#c83737"
 #define BUNDLE_NAME "SHYPref"
 
 @implementation SHYRootListController
