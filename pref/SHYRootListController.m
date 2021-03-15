@@ -1,7 +1,7 @@
 #include "SHYRootListController.h"
 
 #define TWEAK_TITLE "The shy"
-#define TINT_COLOR "#c83737"
+#define TINT_COLOR "#360107"
 #define BUNDLE_NAME "SHYPref"
 
 @implementation SHYRootListController
@@ -13,6 +13,17 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[self localizedItem:@"APPLY"] style:UIBarButtonItemStylePlain target:self action:@selector(apply)];
   }
   return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+
+  UIColor *tintColor = [HCommon colorFromHex:@"a61f32"];
+  // set switches color
+  UIWindow *keyWindow = [HCommon mainWindow];
+  self.view.tintColor = tintColor;
+  keyWindow.tintColor = tintColor;
+  [UISwitch appearanceWhenContainedInInstancesOfClasses:@[self.class]].onTintColor = tintColor;
 }
 
 - (void)apply {
