@@ -96,6 +96,7 @@ static void prepareHideIconsLabels(id self) {
 
   %hook SBCoverSheetIconFlyInAnimator
     -(void)_prepareAnimation {
+      %orig;
       SBIconController *iconController = [%c(SBIconController) sharedInstance];
       [iconController.rootFolderController.contentView _showIconsLabels];
     }

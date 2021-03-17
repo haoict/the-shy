@@ -1,7 +1,7 @@
 Package: com.haoict.theshy
 Name: The shy
 Depends: mobilesubstrate, preferenceloader, com.haoict.libhdev (>= 4.8.0), firmware (>= 14)
-Version: 1.1.1
+Version: 1.1.2
 Architecture: iphoneos-arm
 Description: Dim icons or labels after inactivity
  Dim icons or labels after inactivity
