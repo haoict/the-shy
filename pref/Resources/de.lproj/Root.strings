@@ -1,0 +1,27 @@
+{
+"APPLY" = "Anwenden";
+"Are you sure?" = "Bist du sicher?";
+"BUY_ME_A_COFFEE" = "Kauf mir einen Kaffee";
+"CANCEL" = "Abbrechen";
+"CONFIRM" = "Bestätigen";
+"Cancel" = "Abbrechen";
+"DEFAULT" = "Standard";
+"DELAY" = "Verzögerung (in Sekunden, minimum: 1.0)";
+"DONATION" = "Spende 💰";
+"DO_YOU_REALLY_WANT_TO_RESPRING" = "Willst du wirklich einen Respring ausführen?";
+"ENABLE" = "Aktivieren";
+"FEATURE_REQUEST" = "Erweiterung anfragen ✨";
+"FOUND_A_BUG" = "Einen Fehler gefunden 🐛";
+"ICONS" = "Icons";
+"ICONS AND BANNER DESIGNED BY" = "Icons und Banner entworfen von";
+"LABELS" = "Beschriftungen";
+"LEAVE_A_BUG_REPORT_ON_GITHUB" = "Hinterlasse einen Fehlerbericht auf Github";
+"MAIN_PREFERENCES" = "Haupteinstellungen";
+"OK" = "Okay";
+"OTHER_PREFERENCES" = "Andere Einstellungen";
+"RESET_SETTINGS" = "Einstellungen zurücksetzen";
+"SEND_ME_AN_EMAIL_WITH_YOUR_REQUEST" = "Sende mir eine E-Mail mit deiner Anfrage";
+"SOURCE_CODE" = "Quellcode 🤖";
+"SUPPORT_ME" = "Unterstütze mich";
+"Since labels is subview of icons, this value can't be greater than icons opacity value. Even if you try to set it greater, it will be equal to icons opacity value. Eg: icons = 20, labels = 80 -> labels will be 20" = "Da Beschriftungen eine Unteransicht von Icons sind, darf dieser Wert nicht größer als der Deckkraft-Wert der Icons sein. Selbst wenn Sie versuchen, ihn höher einzustellen, entspricht er dem Deckkraft-Wert der Icons. z.B.: Icons = 20, Beschriftungen = 80 -> Beschriftungen bleiben 20.";
+}
